@@ -1,10 +1,6 @@
 // Node Dependencies
 var axios = require('axios');
 
-
-
-
-
 // NY Times API Request Function
 var articleQuery = function(topic, beginYear, endYear){
 
@@ -26,7 +22,7 @@ var articleQuery = function(topic, beginYear, endYear){
 
         for(var i=0; i<response.data.response.docs.length; i++){
           // Break out of the loop if there are more than 5 entries
-          
+
           if(i==5){
             break;
           }
@@ -38,21 +34,17 @@ var articleQuery = function(topic, beginYear, endYear){
 
         // Return the array of articles via *Promise*
         fulfill(result);
-        
+
       }
       else{
         // If we don't get any results, return an empty string via *Promise*
         reject("");
       }
-      
+
     });
   });
 
 }
-
-
-
-
 
 // API Post Request Function
 var apiSave = function(articleObj){
@@ -77,16 +69,12 @@ var apiSave = function(articleObj){
       else{
         reject("");
       }
-      
+
     })
 
   });
-  
+
 }
-
-
-
-
 
 // API Post Request Function
 var apiGet = function(){
@@ -109,14 +97,10 @@ var apiGet = function(){
       }
 
     });
-    
+
   });
-  
+
 }
-
-
-
-
 
 // API Post Request Function
 var apiDelete = function(deleteArticleId){
@@ -143,10 +127,6 @@ var apiDelete = function(deleteArticleId){
   });
 
 }
-
-
-
-
 
 // Export all helper functions
 module.exports = {
